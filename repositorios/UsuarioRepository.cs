@@ -85,7 +85,7 @@ public class UsuarioRepository : IUsuarioRepository
     using(SQLiteConnection connection = new SQLiteConnection(cadenaConexion)){
       
     SQLiteCommand command = connection.CreateCommand();
-    command.CommandText = $"DELETE FROM usuario WHERE id = @idUsuario;";
+    command.CommandText = $"DELETE FROM usuario WHERE id_usuario = @idUsuario;";
     command.Parameters.Add(new SQLiteParameter("@idUsuario", idUsuario));
 
     connection.Open();
